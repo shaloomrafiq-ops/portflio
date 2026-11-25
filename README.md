@@ -26,7 +26,12 @@ Then open the address Vite prints (usually http://localhost:5173).
 npm run build
 ```
 
-The finished site is written to `dist/`. Upload that folder to any static host, such as Netlify, Vercel or GitHub Pages.
+The finished site is written to `dist/`, with `dist/index.html` as the main page.
+
+## Live site
+
+Every push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy.yml`:
+https://shaloomrafiq-ops.github.io/portflio/
 
 ## Project layout
 
