@@ -1,0 +1,8 @@
+node_modules/
+dist/
+site.zip
+.netlify-site.json
+.netlify/
+artifact.html
+*.log
+.DS_Store

@@ -1,0 +1,268 @@
+<title>Shaloom Rafiq</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Shaloom Rafiq, filmmaker and social media manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: poster-style hero with a sticker board, a bento grid for experience, big-type rows for education and services, cobalt contact band. */
+:root{
+  --bg:#F3F4F8; --tile:#FFFFFF; --ink:#11142B; --muted:#585D75; --line:#D9DBE5;
+  --blue:#2340E0; --on-blue:#F3F4F8; --yellow:#FFC83D; --on-yellow:#11142B;
+  --display:"Archivo","Arial Black","Segoe UI",sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1027; --tile:#161A3A; --ink:#EEF0F8; --muted:#A0A6C4; --line:#272C52;
+    --blue:#4A63FF; --on-blue:#FFFFFF; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1027; --tile:#161A3A; --ink:#EEF0F8; --muted:#A0A6C4; --line:#272C52;
+  --blue:#4A63FF; --on-blue:#FFFFFF; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;text-wrap:balance;margin:0;line-height:.95;letter-spacing:-.02em}
+.kicker{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.logo{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+.logo b{color:var(--blue)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;padding:8px 14px;border-radius:999px}
+nav a:hover{background:var(--tile)}
+nav a.cta{background:var(--ink);color:var(--bg)}
+@media (max-width:720px){nav a:not(.cta){display:none}}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:48px 80px}
+.hero h1{font-size:clamp(3.4rem,10vw,8.4rem);font-weight:900;text-transform:uppercase;line-height:.86}
+.hero h1 .l2{color:var(--blue);display:block}
+.intro{font-size:1.2rem;max-width:30em;margin:28px 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;padding:14px 24px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+.btn.line{background:transparent;color:var(--ink)}
+
+.board{position:relative;height:460px;border-radius:28px;background:var(--tile);border:1px solid var(--line);
+  background-image:radial-gradient(var(--line) 1.4px,transparent 1.6px);background-size:22px 22px;overflow:hidden}
+.board .hint{position:absolute;left:20px;bottom:16px;font-size:.85rem;color:var(--muted);font-weight:500}
+.sticker{position:absolute;left:var(--x);top:var(--y);transform:translate(var(--dx,0px),var(--dy,0px)) rotate(var(--r));
+  font-family:var(--display);font-stretch:112%;font-weight:800;font-size:1.05rem;padding:12px 20px;white-space:nowrap;
+  cursor:grab;user-select:none;touch-action:none;box-shadow:0 6px 0 rgba(17,20,43,.18);transition:box-shadow .15s}
+.sticker.drag{cursor:grabbing;box-shadow:0 14px 24px rgba(17,20,43,.25);z-index:3}
+.s-blue{background:var(--blue);color:var(--on-blue);border-radius:999px}
+.s-yellow{background:var(--yellow);color:var(--on-yellow);border-radius:12px}
+.s-ink{background:var(--ink);color:var(--bg);border-radius:999px}
+.s-line{background:var(--bg);color:var(--ink);border:2px solid var(--ink);border-radius:12px}
+.s-big{font-size:1.6rem;padding:16px 26px}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:32px 56px}
+  .board{height:auto;display:flex;flex-wrap:wrap;gap:12px;padding:24px 20px 52px}
+  .sticker{position:static;transform:rotate(var(--r));cursor:default;font-size:.95rem}
+  .s-big{font-size:1.2rem;padding:12px 20px}
+}
+
+/* about statement */
+.about .wrap{padding-block:72px}
+.statement{font-family:var(--display);font-stretch:100%;font-weight:600;font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.22;letter-spacing:-.015em;max-width:24em;margin:18px 0 0}
+.mark{background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);color:inherit;padding:0 .08em}
+
+/* section heads */
+.sec .wrap{padding-block:64px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.head h2{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900;text-transform:uppercase}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.t{border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:220px;background:var(--tile);border:1px solid var(--line);min-width:0}
+.t h3{font-size:1.55rem;font-weight:800}
+.t p{margin:8px 0 0;color:var(--muted)}
+.t .kicker{color:inherit;opacity:.75}
+.t-film{grid-column:span 2;grid-row:span 2;background:var(--blue);color:var(--on-blue);border:0}
+.t-film h3{font-size:clamp(2.4rem,4.6vw,3.8rem)}
+.t-film p{color:var(--on-blue);opacity:.85;font-size:1.1rem;max-width:24em}
+.t-social{grid-column:span 2;background:var(--yellow);color:var(--on-yellow);border:0}
+.t-social p{color:var(--on-yellow);opacity:.8}
+.big-num{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:clamp(3rem,6vw,4.6rem);line-height:.85;letter-spacing:-.03em}
+.t-social .row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.t-ink{background:var(--ink);color:var(--bg);border:0}
+.t-ink p{color:var(--bg);opacity:.75}
+.t-wide{grid-column:span 2}
+@media (max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.t-film,.t-social,.t-wide{grid-column:span 2}.t-film{grid-row:auto}}
+@media (max-width:520px){.bento{grid-template-columns:minmax(0,1fr)}.t-film,.t-social,.t-wide{grid-column:auto}.t{min-height:0}}
+
+/* education + services rows */
+.rows{border-top:2px solid var(--ink)}
+.r{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) minmax(0,auto);gap:12px 32px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
+.r h3{font-size:clamp(1.5rem,3.4vw,2.5rem);font-weight:800}
+.r p{margin:0;color:var(--muted);text-align:right}
+.services .r{padding-inline:16px;border-radius:0;transition:background .2s,color .2s}
+.services .r:hover{background:var(--blue);color:var(--on-blue)}
+.services .r:hover p,.services .r:hover .kicker{color:var(--on-blue)}
+@media (max-width:760px){.r{grid-template-columns:minmax(0,1fr)}.r p{text-align:left}}
+
+/* contact */
+.contact{background:var(--blue);color:var(--on-blue);margin-top:40px}
+.contact .wrap{padding-block:96px 80px;display:grid;gap:28px}
+.contact h2{font-size:clamp(3.4rem,11vw,9rem);font-weight:900;text-transform:uppercase;line-height:.85}
+.contact p{margin:0;font-size:1.2rem;max-width:30em}
+.mail-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.mail{font-family:var(--display);font-stretch:110%;font-weight:800;font-size:clamp(1.15rem,3.6vw,2.2rem);text-decoration:none;border-bottom:3px solid var(--yellow);overflow-wrap:anywhere;user-select:all}
+.copy{background:var(--yellow);color:var(--on-yellow);border-color:var(--yellow)}
+footer{background:var(--blue);color:var(--on-blue)}
+footer .wrap{padding-block:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.9rem;opacity:.8;border-top:1px solid rgba(255,255,255,.25)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Shaloom <b>Rafiq</b></a>
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#services">Services</a><a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">Filmmaker &amp; social media manager</p>
+        <h1>Shaloom <span class="l2">Rafiq</span></h1>
+        <p class="intro">I make videos and manage social media. I've run social accounts for more than two and a half years, and today my main focus is filmmaking.</p>
+        <div class="btns">
+          <a class="btn solid" href="#contact">Work with me</a>
+          <a class="btn line" href="#experience">My experience</a>
+        </div>
+      </div>
+      <div class="board" id="board" aria-label="Things I have done">
+        <span class="sticker s-blue s-big" style="--x:8%;--y:9%;--r:-4deg">Filmmaker</span>
+        <span class="sticker s-yellow" style="--x:50%;--y:26%;--r:5deg">Social media manager</span>
+        <span class="sticker s-line" style="--x:6%;--y:36%;--r:3deg">FM radio co-host</span>
+        <span class="sticker s-ink" style="--x:40%;--y:50%;--r:-6deg">Athlete</span>
+        <span class="sticker s-yellow" style="--x:10%;--y:62%;--r:-3deg">Livestock business</span>
+        <span class="sticker s-line" style="--x:52%;--y:70%;--r:4deg">Crypto testnets</span>
+        <span class="sticker s-blue" style="--x:58%;--y:6%;--r:7deg">Church planting</span>
+        <span class="hint">Drag the stickers around</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="kicker">About me</p>
+      <p class="statement">I've run a <span class="mark">livestock business</span>, co-hosted on <span class="mark">FM radio</span>, competed in <span class="mark">athletics</span> and worked on crypto testnets. Each of those taught me something about people and hard work. Now I bring all of it to <span class="mark">filmmaking</span>.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="head"><h2>Experience</h2><span class="kicker">6 roles</span></div>
+      <div class="bento">
+        <article class="t t-film">
+          <span class="kicker">Current focus</span>
+          <div><h3>Filmmaker</h3><p>Shooting and editing video, and building my body of work one project at a time.</p></div>
+        </article>
+        <article class="t t-social">
+          <span class="kicker">Social media manager</span>
+          <div class="row"><span class="big-num">2.5+ yrs</span><p>Content plans, posts, captions and short videos, managed every week.</p></div>
+        </article>
+        <article class="t">
+          <span class="kicker">Radio</span>
+          <div><h3>FM co-host</h3><p>Co-hosted a show live on air.</p></div>
+        </article>
+        <article class="t t-ink">
+          <span class="kicker">Business</span>
+          <div><h3>Livestock</h3><p>Ran my own livestock business.</p></div>
+        </article>
+        <article class="t t-wide">
+          <span class="kicker">Tech</span>
+          <div><h3>Crypto testnets</h3><p>Tested blockchain projects before launch and reported problems.</p></div>
+        </article>
+        <article class="t t-wide">
+          <span class="kicker">Sport</span>
+          <div><h3>Athletics</h3><p>Competed as an athlete, which taught me discipline and how to train toward a goal.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="education">
+    <div class="wrap">
+      <div class="head"><h2>Education</h2></div>
+      <div class="rows">
+        <div class="r"><span class="kicker">Studies</span><h3>Health &amp; Physical Education</h3><p></p></div>
+        <div class="r"><span class="kicker">Diploma &middot; 2 years</span><h3>Church Planting</h3><p>The Timothy Initiative</p></div>
+        <div class="r"><span class="kicker">Intermediate</span><h3>FA</h3><p></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec services" id="services">
+    <div class="wrap">
+      <div class="head"><h2>What I do</h2></div>
+      <div class="rows">
+        <div class="r"><span class="kicker">Video</span><h3>Video production</h3><p>Short films, interviews and event videos</p></div>
+        <div class="r"><span class="kicker">Social</span><h3>Social media management</h3><p>Content plans, posts and short-form video</p></div>
+        <div class="r"><span class="kicker">Ministry</span><h3>Church &amp; ministry media</h3><p>Testimonies and event coverage</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Say hello.</h2>
+      <p>Have a video project or need help with your social media? Email me.</p>
+      <div class="mail-row">
+        <a class="mail" id="email" href="mailto:strv.shaloomrafiq@gmail.com">strv.shaloomrafiq@gmail.com</a>
+        <button class="btn copy" id="copy" type="button">Copy email</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>&copy; 2026 Shaloom Rafiq</span><span>Filmmaker &amp; social media manager</span></div>
+</footer>
+
+<script>
+(function(){
+  // draggable stickers (desktop only)
+  var board=document.getElementById('board'), wide=window.matchMedia('(min-width: 901px)');
+  board.querySelectorAll('.sticker').forEach(function(el){
+    var sx,sy,ox=0,oy=0,on=false;
+    el.addEventListener('pointerdown',function(e){
+      if(!wide.matches) return;
+      on=true; sx=e.clientX-ox; sy=e.clientY-oy; el.classList.add('drag'); el.setPointerCapture(e.pointerId);
+    });
+    el.addEventListener('pointermove',function(e){
+      if(!on) return;
+      ox=e.clientX-sx; oy=e.clientY-sy;
+      el.style.setProperty('--dx',ox+'px'); el.style.setProperty('--dy',oy+'px');
+    });
+    function end(){on=false; el.classList.remove('drag')}
+    el.addEventListener('pointerup',end); el.addEventListener('pointercancel',end);
+  });
+
+  // copy email
+  var btn=document.getElementById('copy'), mail=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(mail);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Press Ctrl+C'}
+    try{navigator.clipboard.writeText(mail.textContent).then(done,fallback)}catch(e){fallback()}
+  });
+})();
+</script>
